@@ -4,8 +4,11 @@
 #include <string>
 #include <vector>
 using namespace std;
+void bubbleSort(vector<long>& vec);
+
 
 int main(int argc, char* argv[]) {
+
     int size;
     // Get command line input
     if (argc > 1) {
@@ -19,32 +22,38 @@ int main(int argc, char* argv[]) {
     // TODO: Read size numbers from numbers.txt
     ifstream infile("../numbers.txt");
     long lng;
-    while (infile >> lng) {
+    for (int i = 0; i < size; i++) {
+        infile >> lng;
         vec.push_back(lng);
     }
     // TODO: Print the vector size (to make sure it matches the size printed above)
-    cout << vec.size();
+    cout << vec.size() << endl;
     // TODO: Bubble Sort the vector
-    int read = 0;
-    int write = 0;
+    bubbleSort(vec);
+    // TODO: Print the first and last ten numbers from the vector to the console
+
+    for (int i = vec.size() - 10; i < vec.size(); i++){
+        cout << vec[i] << endl;
+    }
+    for (int i = 0; i < 10; i++){
+        cout << vec[i] << endl;
+    }
+    return 0;
+}
+
+void bubbleSort(vector<long>& vec) {
+
     int numPasses = 0, i;
-    Comparable temp;
+    long temp;
     bool haveSwapped = true;
     while (haveSwapped) {
         haveSwapped = false;
         for (i = 0; i+1 < vec.size()-numPasses; ++i) {
             // Compare items at indices i and i+1 and swap if necessary
             if (vec[i] > vec[i+1]) {
-                read +=2;
                 temp = vec[i];
-                read +=1;
-                write+=1;
                 vec[i] = vec[i+1];
-                read+=2;
-                write+=2;
                 vec[i+1] = temp;
-                read+=1;
-                write+=1;
                 // Update haveSwapped
                 haveSwapped = true;
             }
@@ -53,8 +62,5 @@ int main(int argc, char* argv[]) {
         ++numPasses;
         //printVec(vec);
     }
-    cout << "Bubble Sort      Reads: " << read << " Writes: " << write << endl;
-    // TODO: Print the first and last ten numbers from the vector to the console
 
-    return 0;
 }
