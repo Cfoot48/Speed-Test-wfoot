@@ -75,7 +75,7 @@ if runCpp:
     for size in range(1000, 10001, 1000):
         # TODO: If debug is true, print statement to show where you are in the program
         if debug:
-            print()
+            print(size)
 
         # TODO: Start the clock
         tic = time.time()
