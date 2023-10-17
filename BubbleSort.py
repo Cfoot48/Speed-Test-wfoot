@@ -135,7 +135,7 @@ if len(pythonTimes) < 10 or len(cppTimes) < 10:
 #TODO: else:
 else:
     # TODO: Plot the Python bars in red
-    ax.bar(pythonX, range(1, 11), width=300, color='r', align='center')
+    ax.bar(pythonX, range(1, 11), width=300, color='y', align='center')
     # TODO: Plot the C++ bars in yellow
     ax.bar(cppX, range(1, 11), width=300, color='r', align='center')
 # Set the window title

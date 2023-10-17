@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 using namespace std;
-void bubbleSort(vector<long>& vec);
+void bubbleSort(vector<long long>& vec);
 
 
 int main(int argc, char* argv[]) {
@@ -18,30 +18,34 @@ int main(int argc, char* argv[]) {
     }
     cout << "Looking for size: " << size << endl;
     // TODO: Declare a vector of longs to store the numbers
-    vector <long> vec;
+    vector <long long> vec;
     // TODO: Read size numbers from numbers.txt
-    ifstream infile("../numbers.txt");
-    long lng;
+    ifstream infile("numbers.txt");
+    long long lng = 0;
+    string str ="1";
     for (int i = 0; i < size; i++) {
-        infile >> lng;
-        vec.push_back(lng);
+         getline(infile, str);
+         vec.push_back(stoll(str));
     }
+    infile.close();
     // TODO: Print the vector size (to make sure it matches the size printed above)
     cout << vec.size() << endl;
     // TODO: Bubble Sort the vector
     bubbleSort(vec);
     // TODO: Print the first and last ten numbers from the vector to the console
-
-    for (int i = vec.size() - 10; i < vec.size(); i++){
-        cout << vec[i] << endl;
-    }
+    cout << "Fist 10" << endl;
     for (int i = 0; i < 10; i++){
         cout << vec[i] << endl;
     }
+    cout << "Last 10" << endl;
+    for (int i = vec.size() - 10; i < vec.size(); i++){
+        cout << vec[i] << endl;
+    }
+
     return 0;
 }
 
-void bubbleSort(vector<long>& vec) {
+void bubbleSort(vector<long long>& vec) {
 
     int numPasses = 0, i;
     long temp;
