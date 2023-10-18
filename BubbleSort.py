@@ -117,7 +117,7 @@ if runCpp:
 
     # TODO: If debug is true, after all test runs, print the list of C++ runtimes
     if debug:
-        print(pythonTimes)
+        print(cppTimes)
 
 # Graph the results
 
