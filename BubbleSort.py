@@ -112,7 +112,7 @@ if runCpp:
 
         
         # TODO: Add the runtime to the list
-        pythonTimes.append(toc2-tic2)
+        cppTimes.append(toc2-tic2)
 
 
     # TODO: If debug is true, after all test runs, print the list of C++ runtimes
