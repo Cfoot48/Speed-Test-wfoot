@@ -75,7 +75,7 @@ if runCpp:
     for size in range(1000, 10001, 1000):
         # TODO: If debug is true, print statement to show where you are in the program
         if debug:
-            print(f"Let's see how long it takes Python to bubble sort {size} random integers from a file!")
+            print(f"Let's see how long it takes C++ to bubble sort {size} random integers from a file!")
 
 
         # TODO: Start the clock
@@ -108,7 +108,7 @@ if runCpp:
 
         # TODO: If debug is true, print the time it took C++ to sort the integers
         if debug:
-            rint(f"Python Bubble Sort finished in {(toc2 - tic2):0.6f} seconds")
+            print(f"C++ Bubble Sort finished in {(toc2 - tic2):0.6f} seconds")
 
         
         # TODO: Add the runtime to the list
@@ -136,9 +136,9 @@ if len(pythonTimes) < 10 or len(cppTimes) < 10:
 #TODO: else:
 else:
     # TODO: Plot the Python bars in red
-    ax.bar(pythonX, range(1, 11), width=300, color='red', align='center')
+    ax.bar(pythonX, pythonTimes, width=300, color='red', align='center')
     # TODO: Plot the C++ bars in yellow
-    ax.bar(cppX, range(1, 11), width=300, color='yellow', align='center')
+    ax.bar(cppX, cppTimes, width=300, color='yellow', align='center')
 # Set the window title
 plt.gcf().canvas.manager.set_window_title('Speed Test')
 # Set the graph title
